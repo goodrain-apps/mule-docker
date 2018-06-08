@@ -9,8 +9,9 @@ RUN cd /opt && tar xvzf ~/mule-standalone-4.1.1.tar.gz && rm ~/mule-standalone-4
 # Define environment variables.
 ENV MULE_HOME /opt/mule
 
+ADD wrapper.conf /opt/mule/conf/wrapper.conf
 # Define mount points.
-VOLUME ["/opt/mule/logs", "/opt/mule/conf", "/opt/mule/apps", "/opt/mule/domains"]
+VOLUME ["/opt/mule/logs", "/opt/mule/apps", "/opt/mule/domains"]
 
 # Define working directory.
 WORKDIR /opt/mule
